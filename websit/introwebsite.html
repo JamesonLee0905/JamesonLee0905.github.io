@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Personal Introduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #192D23;
+    }
+    h1 {
+      color: #444156;
+    }
+    p {
+      color: #805E40;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="backgroundMusic" loop>
+  <source src="aphexmusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<button id="playButton">Play Music</button>
+<button id="pauseButton">Pause Music</button>
+
+<script>
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  const playButton = document.getElementById("playButton");
+  const pauseButton = document.getElementById("pauseButton");
+
+  playButton.addEventListener("click", () => {
+    backgroundMusic.volume = 0.5;
+    backgroundMusic.play();
+  });
+
+  pauseButton.addEventListener("click", () => {
+    backgroundMusic.pause();
+  });
+</script>
+
+<h1>Hello World, My name is Jameson</h1>
+<p>My name is Jameson and I'm creating this page for my Web, Programming, and Database Foundation class.</p>
+
+<p>Three of my biggest hobbies are:</p>
+<ul>
+  <li>Listening to music</li>
+  <li>Going to the gym</li>
+  <li>Spending time with friends</li>
+</ul>
+
+<p>Here's a song I enjoy:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5ihwFCY74As?si=WGgQN_ogliDFQ9Vm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p>I hope to learn more about JavaScript so I can make this website look cool.</p>
+
+</body>
+</html>
