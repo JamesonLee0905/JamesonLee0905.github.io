@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Guessing Game</h1>
+    <form>
+        <label for="guess">Enter your guess (1-100):</label>
+        <input id="guess" type="number" min="1" max="100">
+        <button type="button" id="submit">Guess</button>
+
+        <label for="result">Result:</label>
+        <div id="result"></div>
+    </form>
+
+    <py-config>
+        packages = ["numpy"]
+    </py-config>
+
+    <py-script>
+        import numpy as np
+        from pyscript import when
+        
+        # Generate random number between 1 and 100
+        target_number = np.random.randint(1, 101)
+        
+        @when("click", selector="#submit")
+        def check_guess():
+            user_guess = int(Element("guess").value)
+            result = Element("result")
+            
+            if user_guess == target_number:
+                result.write("Congratulations! You guessed correctly.")
+            elif user_guess > target_number:
+                result.write("Too high! Try again.")
+            else:
+                result.write("Too low! Try again.")
+    </py-script>
+
+</body>
+</html>
